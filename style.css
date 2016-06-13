@@ -1,0 +1,27 @@
+body{
+	background-color:#673AB7;
+}
+
+h1{
+	color:white;
+}
+
+p{
+	color:white;
+}
+
+.nav.navbar-nav > li a {
+    color: white;
+}
+
+.nav.navbar-nav > li a:hover{
+	background-color: #D1C4E9;
+}
+
+.nav.navbar-nav > li a {
+    color: white;
+}
+
+.nav.navbar-nav > li a:hover{
+	background-color: #D1C4E9;
+}
