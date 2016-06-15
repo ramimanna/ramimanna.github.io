@@ -10,6 +10,16 @@ p{
 	color:white;
 }
 
+.navbar
+{
+   -webkit-backface-visibility: hidden;
+}
+
+.btn:focus,.btn:active {
+   outline: none !important;
+}
+
+
 .nav.navbar-nav > li a {
     color: white;
 }
