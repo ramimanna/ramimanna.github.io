@@ -109,7 +109,7 @@ body{
   background-image: linear-gradient(rgba(63, 81, 181, 0.75), rgba(63, 81, 181, 0.75)), url(canal_grande_venice.jpg);/* */
   background-position: center center;
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: cover 550%;
   flex-grow: 1;
   background-attachment: fixed;
 }
