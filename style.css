@@ -1,37 +1,150 @@
+/*FLEXBOX ALIGNERS*/
+
+.Aligner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.Aligner-item {
+  max-width: 50%;
+}
+
+.Aligner-item--top {
+  align-self: flex-start;
+}
+
+.Aligner-item--bottom {
+  align-self: flex-end;
+}
+
+/*FLAT UI COLORS*/
+.BelizeHole{
+  background: #2980b9;
+}
+.Turqoise{
+  background: #1abc9c;
+}
+.WetAsphalt{
+  background: #34495e;
+}
+.GreenSea{
+  background: #16a085;
+}
+
+.Carrot{
+  background: #e67e22;
+}
+/*FONTS FOR TITLES:*/
+
+.CherrySwash{
+  font-family: 'Cherry Swash', cursive;
+}
+
+.Lato{
+  font-family: "Lato";
+  font-weight: 100;
+  /*Capitalize too!*/
+}
+
+.NovaFlat{
+  font-family: "Nova Flat",cursive;
+}
+
+.PermanentMarker{
+  font-family: "Permanent Marker", cursive;
+}
+
+.DeliusSwashCaps{
+  font-family: "Delius Swash Caps", cursive;
+}
+
+/*FONTS FOR TEXT*/
+
+.JosefinSans{
+  font-family: "Josefin Sans";
+}
+
+html,
+body, .demo-layout-transparent #front-page-container {
+  height: 110vh;
+}
 body{
-	background-color:#673AB7;
+ background:white;
+}
+#front-page-container{
+
+  display: flex;
+  flex-flow: column;
 }
 
-h1{
-	color:white;
+.demo-layout-transparent {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+.demo-layout-transparent .mdl-layout__header,
+.mdl-layout__header-row .mdl-navigation__link,
+.demo-layout-transparent .mdl-layout__drawer-button {
+  /* This background is dark, so we set text to white. Use 87% black instead if
+     your background is light. */
+  color: white !important;
 }
 
-p{
-	color:white;
+.page-content, main{
+	width:100%;
 }
 
-.navbar
-{
-   -webkit-backface-visibility: hidden;
+.mdl-layout__header-row {
+  padding-left: 24px !important;
 }
 
-.btn:focus,.btn:active {
-   outline: none !important;
+.hero-section {
+  /* IE11 doesn't like min-height */
+  width: 100%;
+
+  position:relative;
+    top:-10vh; /*64 for header, x2 to make bottom space the same height*/
+
+  background-image: linear-gradient(rgba(63, 81, 181, 0.75), rgba(63, 81, 181, 0.75)), url(canal_grande_venice.jpg);/* */
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  flex-grow: 1;
+  background-attachment: fixed;
 }
 
-
-.nav.navbar-nav > li a {
-    color: white;
+#arrowbutton {
+margin-top:56px;
+/*  position: absolute;
+  bottom: 500px;*/
+/*  left: 50%;
+  transform: translateX(-50%);*/
 }
 
-.nav.navbar-nav > li a:hover{
-	background-color: #D1C4E9;
+#hero-title{
+	font-family: "LATO";
+  font-size: 78px;
+  font-weight: 100;
 }
 
-.nav.navbar-nav > li a {
-    color: white;
+.hero-text, .hero-text p {
+	font-family: "Josefin Sans";
+/*	font-weight: 100;
+*/max-width:100%;
+  font-size: 24px;
+  color: white;
+  margin: auto;
 }
 
-.nav.navbar-nav > li a:hover{
-	background-color: #D1C4E9;
+@media only screen and (max-width: 500px) {
+    #hero-title {
+        font-size: 24px;
+    }
+}
+
+@media screen and (max-width: 580px) {
+  .hero-text p {
+    white-space: pre-line;
+  }
 }
