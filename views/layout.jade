@@ -1,0 +1,47 @@
+doctype html
+html
+  head
+    title Project Ramroom
+    link(rel='stylesheet', href='https://fonts.googleapis.com/icon?family=Material+Icons')
+    link(rel='stylesheet', href='https://code.getmdl.io/1.1.3/material.cyan-teal.min.css')
+    link(href='https://fonts.googleapis.com/css?family=Aladin|Codystar|Lato:100,300|Cherry+Swash|Nova+Flat|Permanent+Marker|Delius+Swash+Caps|Josefin+Sans', rel='stylesheet', type='text/css')
+    link(rel='stylesheet', type='text/css', href='/stylesheets/style.css')
+    script(defer='', src='https://code.getmdl.io/1.1.3/material.min.js')
+    meta(name='viewport', content='width=device-width, initial-scale=1.0')
+  body
+    // Uses a transparent header that draws on top of the layout's background
+    .demo-layout-transparent.mdl-layout.mdl-js-layout.mdl-layout--fixed-header
+      #front-page-container
+        header.mdl-layout__header.mdl-layout__header--transparent
+          .mdl-layout__header-row
+            // Title
+            span.mdl-layout-title Ramroom
+            // Add spacer, to align navigation to the right
+            .mdl-layout-spacer
+            // Navigation
+            nav.mdl-navigation
+              a.mdl-navigation__link(href='http://ramimanna.github.io/projects.html') Projects
+              a.mdl-navigation__link(href='') Exploration
+              a.mdl-navigation__link(href='') Adventure
+              a.mdl-navigation__link(href='') Experiments
+              a.mdl-navigation__link(href='') Strategy
+        //
+          <div class='mdl-layout__drawer'>
+          <span class='mdl-layout-title'>Ramroom</span>
+          <nav class='mdl-navigation'>
+          <a class='mdl-navigation__link' href='http://ramimanna.github.io/projects.html'>Projects</a>
+          <a class='mdl-navigation__link' href=''>Exploration</a>
+          <a class='mdl-navigation__link' href=''>Adventure</a>
+          <a class='mdl-navigation__link' href=''>Experiments</a>
+          <a class='mdl-navigation__link' href=''>Strategy</a>
+          </nav>
+          </div>
+        .hero-section.Aligner
+          // mdl-color--cyan-300
+          .hero-text.mdl-typography--text-center.Aligner-item
+            h1#hero-title PROJECT RAMROOM
+            p A life-long endeavor
+            #arrowbutton
+              a.mdl-button.mdl-js-button.mdl-button--fab.mdl-js-ripple-effect.mdl-color--white.kitty-hero__text-button(href='#start')
+                i.material-icons keyboard_arrow_down
+      block MainContent

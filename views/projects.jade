@@ -1,0 +1,29 @@
+extends layout
+
+block MainContent
+  style.
+    #button_wrapper{
+      width: 100%;
+      height: 100px;
+      /*background-color: #ddd;*/
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+  main.mdl-layout__content
+    #start.page-content
+      .mdl-grid
+        .mdl-cell.mdl-cell--6-col
+          #button_wrapper.mdl-layout
+            // Accent-colored raised button with ripple
+            a.mdl-button.mdl-js-button.mdl-button--raised.mdl-js-ripple-effect.mdl-button--accent
+              | Paint Editor
+        .mdl-cell.mdl-cell--6-col
+          #button_wrapper.mdl-layout
+            // Accent-colored raised button with ripple
+            a.mdl-button.mdl-js-button.mdl-button--raised.mdl-js-ripple-effect.mdl-button--accent(href="https://ramimanna.github.io/tracking")
+              | Tracking
+      .mdl-grid
+        .mdl-cell.mdl-cell--6-col
+        .mdl-cell.mdl-cell--6-col

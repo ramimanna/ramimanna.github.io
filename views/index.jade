@@ -1,0 +1,79 @@
+extends layout
+
+block MainContent
+  main.mdl-layout__content
+    #start.page-content
+      //
+        <div id="intro" class="mdl-grid intro-section">
+        <div class="about-kitty mdl-cell mdl-cell--12-col">
+        <p class="mdl-typography--headline"></p>
+        </div>
+        </div>
+      // Square card
+      style.
+        .demo-card-square.mdl-card {
+        min-width: 320px;
+        width: auto;
+        height: 320px;
+        }
+        #Card1 {
+        color: #fff;
+        background:
+        url('/images/computer.svg') center center no-repeat #ddd;
+        background-size: 130px;
+        }
+        #Card2 {
+        color: #fff;
+        background:
+        url('/images/telescope.svg') center center no-repeat #ddd;
+        background-size: 130px;
+        }
+        #Card3 {
+        color: #fff;
+        background:
+        url('/images/binoculars.svg') center center no-repeat #ddd;
+        background-size: 130px;
+        }
+        /*.mdl-card__actions{
+        background: rgba(63, 81, 181, 1);
+        }*/
+        .mdl-card__title-text{
+        color:black;
+        }
+      .mdl-grid
+        .mdl-cell.mdl-cell--4-col
+          .demo-card-square.mdl-card.mdl-shadow--2dp
+            #Card1.mdl-card__title.mdl-card--expand
+              h2.mdl-card__title-text Projects
+            //
+              <div class="mdl-card__supporting-text Carrot">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+              Aenan convallis.
+              </div>
+            .mdl-card__actions.mdl-card--border
+              a.mdl-button.mdl-button--colored.mdl-js-button.mdl-js-ripple-effect(href='/projects')
+                | Explore
+        .mdl-cell.mdl-cell--4-col
+          .demo-card-square.mdl-card.mdl-shadow--2dp
+            #Card2.mdl-card__title.mdl-card--expand
+              h2.mdl-card__title-text Exploration
+            //
+              <div class="mdl-card__supporting-text">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+              Aenan convallis.
+              </div>
+            .mdl-card__actions.mdl-card--border
+              a.mdl-button.mdl-button--colored.mdl-js-button.mdl-js-ripple-effect(href='http://ramimanna.github.io/learning.html')
+                | Explore
+        .mdl-cell.mdl-cell--4-col
+          .demo-card-square.mdl-card.mdl-shadow--2dp
+            #Card3.mdl-card__title.mdl-card--expand
+              h2.mdl-card__title-text Adventure
+            //
+              <div class="mdl-card__supporting-text">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+              Aenan convallis.
+              </div>
+            .mdl-card__actions.mdl-card--border
+              a.mdl-button.mdl-button--colored.mdl-js-button.mdl-js-ripple-effect(href='')
+                | Explore
