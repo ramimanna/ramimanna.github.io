@@ -3,12 +3,12 @@ var router = express.Router();
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Express' });
+  res.render('index', { title: 'Project Ramroom' });
 });
 
 router.get('/projects', function(req, res, next) {
   console.log("projects is here");
-  res.render('projects');
+  res.render('projects', {title:'Projects'});
 });
 
 router.get('/adventure', function(req, res, next) {
