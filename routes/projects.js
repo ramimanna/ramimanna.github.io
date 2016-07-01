@@ -9,11 +9,11 @@ projectsRouter.get('/', function(req, res, next) {
   res.render('projects', {title:'Projects'});
 });
 
-projectPagesRouter('/painteditor', function(req,req,next){
+projectPagesRouter.get('/painteditor', function(req,res,next){
 	res.render('painteditor',{title:'Paint Editor'});
 });
 
-projectPagesRouter('/tracking', function(req,req,next){
+projectPagesRouter.get('/tracking', function(req,res,next){
 	res.render('tracking',{title:'Tracking'});
 });
 
