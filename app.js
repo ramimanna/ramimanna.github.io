@@ -9,7 +9,9 @@ var Regex = require("regex");
 
 
 var routes = require('./routes/index');
-var projects = require('./routes/projects')
+var projects = require('./routes/projects');
+var adventure = require('./routes/adventure');
+var exploration = require('./routes/exploration')
 var users = require('./routes/users');
 
 

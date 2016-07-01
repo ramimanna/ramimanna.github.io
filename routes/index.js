@@ -11,13 +11,5 @@ router.get('/', function(req, res, next) {
 //   res.render('projects', {title:'Projects'});
 // });
 
-router.get('/adventure', function(req, res, next) {
-  res.send('This is adventure');
-});
-
-router.get('/explore', function(req, res, next) {
-  res.send('This is explore');
-});
-
 
 module.exports = router;
