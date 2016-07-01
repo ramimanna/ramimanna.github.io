@@ -14,7 +14,6 @@ var adventure = require('./routes/adventure');
 var exploration = require('./routes/exploration')
 var users = require('./routes/users');
 
-
 var app = express();
 
 // view engine setup

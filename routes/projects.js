@@ -1,9 +1,20 @@
 var express = require('express');
-var router = express.Router();
+var projectsRouter = express.Router();
+var projectPagesRouter = express.Router({mergeParams: true});
+
+projectsRouter.use('/',projectPagesRouter);
 
 /* GET users listing. */
-router.get('/', function(req, res, next) {
+projectsRouter.get('/', function(req, res, next) {
   res.render('projects', {title:'Projects'});
 });
 
-module.exports = router;
+projectPagesRouter('/painteditor', function(req,req,next){
+	res.render('painteditor',{title:'Paint Editor'});
+});
+
+projectPagesRouter('/tracking', function(req,req,next){
+	res.render('tracking',{title:'Tracking'});
+});
+
+module.exports = projectsRouter;
