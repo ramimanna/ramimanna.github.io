@@ -67,6 +67,7 @@ app.use(function(err, req, res, next) {
 
 //NODEJS REQUEST PACKAGE:
 var request = require('request');
+var request = request.defaults({jar: true})
 
 //Request Randomly Generated User
 // request('https://randomuser.me/api/', function (error, response, body) {

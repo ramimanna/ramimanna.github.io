@@ -101,10 +101,11 @@ body{
 
 .hero-section {
   /* IE11 doesn't like min-height */
-  width: 100%;
+  width: 100vw;
+  height: 100vh;
 
-  position:relative;
-    top:-10vh; /*64 for header, x2 to make bottom space the same height*/
+  position:absolute;
+  top:0; /*64 for header, x2 to make bottom space the same height*/
 
   background-image: linear-gradient(rgba(63, 81, 181, 0.75), rgba(63, 81, 181, 0.75)), url(/images/canal_grande_venice.jpg);/* */
   background-position: center center;
