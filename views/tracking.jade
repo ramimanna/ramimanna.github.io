@@ -1,4 +1,16 @@
-extends layout
+doctype html
+html
+	head 
+		link(rel='stylesheet', type='text/css', href='/stylesheets/trackingStyle.css')
+		script(src='/javascripts/tracking-min.js')
+		script(src='/javascripts/data/face-min.js')
+		script(type='text/javascript', src='https://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js')
 
-block MainContent
-	h1 hi from Tracking! :D
+	body
+		canvas#myCanvas(width='800', height='600')
+		canvas#backingCanvas(width='800', height='600')
+		canvas#videoCanvas(width='800', height='600')
+		video#myVideo(autoplay='true', width='800', height='600', preload='', loop='', muted='')
+		script(src='/javascripts/jsfeat-min.js', type='text/javascript')
+		script(src='/javascripts/video.js', type='text/javascript')
+		script(src='/javascripts/trackers.js', type='text/javascript')

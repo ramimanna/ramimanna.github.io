@@ -1,4 +1,42 @@
-extends layout
-
-block MainContent
-	h1 Hi from painteditor
+doctype html
+html
+  head
+    meta(charset='UTF-8')
+    title Canvas! :D
+    link(href='https://fonts.googleapis.com/css?family=Open+Sans', rel='stylesheet', type='text/css')
+    link(rel='stylesheet', type='text/css', href='/stylesheets/stylePaintEditor.css')
+    script(type='text/javascript', src='https://code.jquery.com/jquery-1.7.1.min.js')
+    script(src='https://code.createjs.com/easeljs-0.8.2.min.js')
+  body
+    canvas#myCanvas(width='800', height='500', style='border:1px solid #000; border-radius:10px;')
+    h3 All the colors you really need:
+    select#Colors(onchange='getChoice(this.id);')
+      option(value='Green', selected='')  Green 
+      option(value='Purple')  Purple 
+      option(value='White')  White 
+      option(value='Red')  Red 
+      option(value='Orange')  Orange 
+      option(value='Blue')  Blue 
+    h3 Shapes! ( 3D have sold out :P ) 
+    select#Shapes(onchange='getChoice(this.id);')
+      option(value='Rectangle', selected='')  Rectangle 
+      option(value='Circle')  Circle
+      option(value='Line')  Line 
+    input#shapeDrawFillTool(type='button', value='Shape Draw Fill')
+    input#shapeDrawOutlineTool(type='button', value='Shape Draw Outline')
+    input#cursorTool(type='button', value='Cursor')
+    input#drawTool(type='button', value='Draw')
+    input#textTool(type='button', value='Text')
+    input#imageTool(type='button', value='Image')
+    br
+    br
+    h3 Free(dom) Form:
+    .onoffswitch
+      input#myonoffswitch.onoffswitch-checkbox(type='checkbox', name='onoffswitch', onchange='toggleDraw();')
+      label.onoffswitch-label(for='myonoffswitch')
+        span.onoffswitch-inner
+        span.onoffswitch-switch
+    canvas#feed
+    canvas#display
+  script(src='/javascripts/easel.js')
+  script(src='/javascripts/painteditor.js')

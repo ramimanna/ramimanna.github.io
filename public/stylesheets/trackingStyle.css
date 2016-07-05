@@ -1,0 +1,40 @@
+#webcam,
+#feed {
+    display: none;
+}
+
+#myVideo {
+    position: absolute;
+    top: 25%;
+    left: 25%;
+    margin: -180px 0 0 -240px;
+  }
+
+#myCanvas,#videoCanvas {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin: -360px 0 0 -480px;
+  }
+#myVideo,#backingCanvas{
+    visibility: hidden;
+	z-index: 0;
+}
+#myCanvas{
+	z-index: 1;
+}
+
+#videoCanvas{
+    z-index: 0;
+}
+
+body{
+	background-color:transparent;
+}
+
+#myVideo, #myCanvas, #videoCanvas
+{
+    transform: rotateY(180deg);
+    -webkit-transform:rotateY(180deg); /* Safari and Chrome */
+    -moz-transform:rotateY(180deg); /* Firefox */
+}

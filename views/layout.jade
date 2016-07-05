@@ -2,12 +2,14 @@ doctype html
 html
   head
     title #{title}
+    meta(charset='utf-8')
     link(rel='stylesheet', href='https://fonts.googleapis.com/icon?family=Material+Icons')
     link(rel='stylesheet', href='https://code.getmdl.io/1.1.3/material.cyan-teal.min.css')
     link(href='https://fonts.googleapis.com/css?family=Aladin|Codystar|Lato:100,300|Cherry+Swash|Nova+Flat|Permanent+Marker|Delius+Swash+Caps|Josefin+Sans', rel='stylesheet', type='text/css')
     link(rel='stylesheet', type='text/css', href='/stylesheets/style.css')
     script(defer='', src='https://code.getmdl.io/1.1.3/material.min.js')
     meta(name='viewport', content='width=device-width, initial-scale=1.0')
+    block HeadAdditions
   body
     // Uses a transparent header that draws on top of the layout's background
     .demo-layout-transparent.mdl-layout.mdl-js-layout.mdl-layout--fixed-header
