@@ -17,4 +17,9 @@ projectPagesRouter.get('/tracking', function(req,res,next){
 	res.render('tracking',{title:'Tracking'});
 });
 
+projectPagesRouter.get('/tracking/:mode', function(req,res,next){
+	res.render('tracking',{title:'Tracking',mode:req.params.mode});
+});
+
+
 module.exports = projectsRouter;

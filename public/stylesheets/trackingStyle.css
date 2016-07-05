@@ -2,19 +2,15 @@
 #feed {
     display: none;
 }
+.mdl-typography--display-4{
+    color: gray;
+}
 
-#myVideo {
+#myCanvas,#videoCanvas,#myVideo {
     position: absolute;
-    top: 25%;
-    left: 25%;
-    margin: -180px 0 0 -240px;
-  }
-
-#myCanvas,#videoCanvas {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    margin: -360px 0 0 -480px;
+    top: 125px;
+    left:75px;
+    margin: auto 0 0 auto;
   }
 #myVideo,#backingCanvas{
     visibility: hidden;

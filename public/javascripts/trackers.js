@@ -1,4 +1,9 @@
-  var filter = "scharr";
+// $('.mdl-tabs__tab').on('click',function(){
+
+// });
+
+  //var filter = document.getElementsByClassName("is-active")[0].text.toLowerCase();
+  var filter = document.getElementsByTagName('title')[0].text;
   var front = document.getElementById("myCanvas");
   var front_ctx = front.getContext("2d");
 
@@ -10,31 +15,25 @@
   var canvas = document.getElementById("videoCanvas");
   var canvas_context = canvas.getContext("2d");
 
-document.addEventListener('DOMContentLoaded', function(){
-    // var v = document.getElementById('v');
-    // var canvas = document.getElementById('c');
-    // var context = canvas.getContext('2d');
+  var cw = Math.floor(canvas.clientWidth);
+  var ch = Math.floor(canvas.clientHeight);
+  canvas.width = cw;
+  canvas.height = ch;
+  if (filter=="grayscale" || filter == "scharr" || filter == "sobel"){
+    img_u8 = new jsfeat.matrix_t(cw, ch, jsfeat.U8_t | jsfeat.C1_t);
+  }
+  if(filter == "scharr"){
+    img_gxgy = new jsfeat.matrix_t(cw, ch, jsfeat.S32C2_t);      
+  }
+  if(filter == "sobel"){
+    // img_u8 = new jsfeat.matrix_t(cw, ch, jsfeat.U8C1_t);
+    img_gxgy = new jsfeat.matrix_t(cw, ch, jsfeat.S32C2_t);
+  }
+  video.addEventListener('playing', function(){
+    draw(this,canvas_context,back_context,cw,ch);
+  }, false);
 
-    var cw = Math.floor(canvas.clientWidth);
-    var ch = Math.floor(canvas.clientHeight);
-    canvas.width = cw;
-    canvas.height = ch;
-    if (filter=="grayscale" || filter == "scharr" || filter == "sobel"){
-      img_u8 = new jsfeat.matrix_t(cw, ch, jsfeat.U8_t | jsfeat.C1_t);
-    }
-    if(filter == "scharr"){
-      img_gxgy = new jsfeat.matrix_t(cw, ch, jsfeat.S32C2_t);      
-    }
-    if(filter == "sobel"){
-      // img_u8 = new jsfeat.matrix_t(cw, ch, jsfeat.U8C1_t);
-      img_gxgy = new jsfeat.matrix_t(cw, ch, jsfeat.S32C2_t);
-    }
-
-    video.addEventListener('playing', function(){
-        draw(this,canvas_context,back_context,cw,ch);
-    },false);
-
-},false);
+// },false);
 
 function draw(v,ctx,b_ctx,w,h) {
     if(v.paused || v.ended) return false;
@@ -85,21 +84,6 @@ function draw(v,ctx,b_ctx,w,h) {
           data_u32[i] = (pix << 24) | (gx << 16) | (0 << 8) | gy;
       } 
     }
-
-
-    //WITH PURE HTML5/JS:
-
-    // var data = image_data.data;
-    // for(var i = 0; i < data.length; i+=4) {
-    //     var r = data[i];
-    //     var g = data[i+1];
-    //     var b = data[i+2];
-    //     var brightness = (3*r+4*g+b)>>>3;
-    //     data[i] = brightness;
-    //     data[i+1] = brightness;
-    //     data[i+2] = brightness;
-    // }
-    // image_data.data = data;
     ctx.putImageData(image_data,0,0,0,0,w,h);
     setTimeout(draw,20,v,ctx,b_ctx,w,h);
 }
@@ -140,4 +124,3 @@ function draw(v,ctx,b_ctx,w,h) {
     }
   });
 
-  // tracking.track('#myVideo', face_tracker);
