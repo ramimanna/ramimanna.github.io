@@ -6,7 +6,7 @@
     color: gray;
 }
 
-#myCanvas,#videoCanvas,#myVideo {
+#frontCanvas,#videoCanvas,#myVideo {
     position: absolute;
     top: 125px;
     left:75px;
@@ -16,7 +16,7 @@
     visibility: hidden;
 	z-index: 0;
 }
-#myCanvas{
+#frontCanvas{
 	z-index: 1;
 }
 
@@ -28,7 +28,7 @@ body{
 	background-color:transparent;
 }
 
-#myVideo, #myCanvas, #videoCanvas
+#myVideo, #frontCanvas, #videoCanvas
 {
     transform: rotateY(180deg);
     -webkit-transform:rotateY(180deg); /* Safari and Chrome */
