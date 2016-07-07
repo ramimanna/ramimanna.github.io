@@ -20,3 +20,32 @@ textarea,#textInput {
     -webkit-appearance:none;    
 }
 */
+
+#CanvasCard{ /*#feed,#display*/
+    display:block;
+    margin: 0 auto;
+    width:1000px;
+}
+
+/*#feed{
+    position:relative;
+    top:-500px;
+}
+#display: {
+    position:relative;
+    bottom:0;
+}*/
+.mdl-card__media{
+
+    height:500px;
+    background-color: transparent;
+}
+
+#ToolButtons button{
+    width:150px;
+    display:block;
+    margin: 0 auto;
+}
+body{
+    background: #eee;
+}

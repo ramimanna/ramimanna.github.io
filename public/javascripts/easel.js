@@ -378,8 +378,10 @@ Easel.prototype.mouseDown = function(){
 			this.html.id="textInput";
 			this.html.value = "";
 			this.html.style.position = "absolute";
-			this.html.style.top = 0;
-			this.html.style.left = 0;
+			console.log(top_offset);
+			this.html.style.top = (top_offset-9).toString()+"px";
+			this.html.style.left = left_offset.toString()+"px";
+			this.html.style.zIndex = 2;
 			document.body.appendChild(this.html);
 			this.textBox = new createjs.DOMElement(this.html);
 			this.textBox.x = mouse[0];
@@ -396,7 +398,7 @@ Easel.prototype.mouseDown = function(){
 			this.text = new createjs.Text(text_value);
 			this.text.cursor = "text";
 			this.text.x = this.textBox.x;
-			this.text.y = this.textBox.y;
+			this.text.y = this.textBox.y-9;
 			this.stage.addChild(this.text);				
 			this.stage.update();
 			text_value = "";

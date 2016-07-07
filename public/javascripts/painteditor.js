@@ -110,14 +110,17 @@ canvas.addEventListener("mousemove",myEasel.mouseMove.bind(myEasel));
 canvas.addEventListener("dblclick",myEasel.doubleClick.bind(myEasel));
 document.addEventListener("keydown",myEasel.keyDownOrPress.bind(myEasel));
 
+//Canvas Offsets from top left of body, used for mouse tracking adjustment
+left_offset = $('canvas').offset().left;
+top_offset = $('canvas').offset().top; 
 
 //mouse coords at any time
 var mouse=[0,0];
 //Tracks shift key ONLY when mouse is moving
 var shiftDown = false;
 //Keeps track of these mouse (mouse position) and shiftDown (if shift key is down) with a listener when the mouse moves
-document.addEventListener('mousemove', function(e) {
-  mouse = [e.pageX - canvas.offsetLeft, e.pageY - canvas.offsetTop];
+document.addEventListener('mousemove', function(e) { 
+  mouse = [e.pageX - left_offset, e.pageY - top_offset];
   shiftDown = false;
   if(event.shiftKey){
     shiftDown = true;
@@ -126,6 +129,7 @@ document.addEventListener('mousemove', function(e) {
 
 //stores canvas dimensions
 var canvas_dimensions = [+$('canvas').attr("width"),+$('canvas').attr("height")];
+console.log("canvas_dimensions",canvas_dimensions);
 
 //keeps track of whether an active text input box exists
 var text_box_exists = false;

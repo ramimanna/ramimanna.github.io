@@ -23,8 +23,14 @@ html
     script(type='text/javascript', src='https://code.jquery.com/jquery-1.7.1.min.js')
     script(src='https://code.createjs.com/easeljs-0.8.2.min.js')
   body
-
-    canvas#myCanvas(width='800', height='500', style='border:1px solid #000; border-radius:10px;')
+    br
+    br
+    #CanvasCard.mdl-card.mdl-shadow--4dp
+      .mdl-card__media
+        canvas#myCanvas(width='1000', height='500')
+        //- canvas#feed(width="1000",height='500')
+        //- canvas#display(width="1000",height='500')
+      button.mdl-button.mdl-js-button.mdl-js-ripple-effect.mdl-button--colored Save
     .mdl-grid
       .mdl-cell.mdl-cell--6-col
         //- select#Colors(onchange='getChoice(this.id);')
@@ -41,7 +47,7 @@ html
       //-     option(value='Circle')  Circle
       //-     option(value='Line')  Line 
 
-    .mdl-grid
+    #ToolButtons.mdl-grid
       .mdl-cell.mdl-cell--2-col          
         button#shapeDrawFillTool.mdl-button.mdl-js-button.mdl-button--raised.mdl-js-ripple-effect.mdl-button--colored Shape Draw Fill
       .mdl-cell.mdl-cell--2-col          
@@ -72,7 +78,6 @@ html
         option.mdl-menu__item.material-icons(value='Circle', onclick="updateChoice('Shapes',this.value)") fiber_manual_record
         option.mdl-menu__item.material-icons(value='Line', onclick="updateChoice('Shapes',this.value)") remove
 
-    canvas#feed
-    canvas#display
+
   script(src='/javascripts/easel.js')
   script(src='/javascripts/painteditor.js')
