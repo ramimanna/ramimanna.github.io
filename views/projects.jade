@@ -32,6 +32,7 @@ block MainContent
         .mdl-tabs__tab-bar
           a.mdl-tabs__tab.is-active(href='#webdev-panel') Web Dev
           a.mdl-tabs__tab(href='#ml-panel') Machine Learning
+          a.mdl-tabs__tab(href='#hack-panel') Hackathons
           a.mdl-tabs__tab(href='#pubs-panel') Publications
         #webdev-panel.mdl-tabs__panel.is-active
           .mdl-grid
@@ -46,9 +47,15 @@ block MainContent
                 a.mdl-button.mdl-js-button.mdl-button--raised.mdl-js-ripple-effect.mdl-button--accent(href="/projects/tracking")
                   | Tracking
         #ml-panel.mdl-tabs__panel
-          ul
-            li Neural Network trained on handwritten digits (MNIST database)
+          ul.mdl-list
+            li.mdl-list__item Neural Network trained on handwritten digits (MNIST database)
+        #hack-panel.mdl-tabs__panel
+          ul.mdl-list
+            li.mdl-list__item MakeMIT Top 10: Can't Handle This
 
         #pubs-panel.mdl-tabs__panel
-          ul
-            li Mathematical Investigation of Middle Eastern Card Game "Tarneeb"
+          ul.mdl-list
+            li.mdl-list__item Mathematical Investigation of Middle Eastern Card Game "Tarneeb"
+
+
+

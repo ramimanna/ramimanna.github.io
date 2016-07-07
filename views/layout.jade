@@ -3,12 +3,19 @@ html
   head
     title #{title}
     meta(charset='utf-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1.0')
+
+    //Material Design Lite
     link(rel='stylesheet', href='https://fonts.googleapis.com/icon?family=Material+Icons')
     link(rel='stylesheet', href='https://code.getmdl.io/1.1.3/material.cyan-teal.min.css')
-    link(href='https://fonts.googleapis.com/css?family=Aladin|Codystar|Lato:100,300|Cherry+Swash|Nova+Flat|Permanent+Marker|Delius+Swash+Caps|Josefin+Sans', rel='stylesheet', type='text/css')
-    link(rel='stylesheet', type='text/css', href='/stylesheets/style.css')
     script(defer='', src='https://code.getmdl.io/1.1.3/material.min.js')
-    meta(name='viewport', content='width=device-width, initial-scale=1.0')
+
+    //Fonts
+    link(href='https://fonts.googleapis.com/css?family=Aladin|Codystar|Lato:100,300|Cherry+Swash|Nova+Flat|Permanent+Marker|Delius+Swash+Caps|Josefin+Sans', rel='stylesheet', type='text/css')
+    
+
+    //My Stylesheets
+    link(rel='stylesheet', type='text/css', href='/stylesheets/style.css')
     block HeadAdditions
   body
     // Uses a transparent header that draws on top of the layout's background
@@ -47,3 +54,59 @@ html
               a.mdl-button.mdl-js-button.mdl-button--fab.mdl-js-ripple-effect.mdl-color--white.kitty-hero__text-button(href='#start')
                 i.material-icons keyboard_arrow_down
       block MainContent
+  
+      footer.mdl-mega-footer
+        .mdl-mega-footer__middle-section
+          .mdl-mega-footer__drop-down-section
+            input.mdl-mega-footer__heading-checkbox(type='checkbox', checked='')
+            h1.mdl-mega-footer__heading Features
+            ul.mdl-mega-footer__link-list
+              li
+                a(href='#') About
+              li
+                a(href='#') Terms
+              li
+                a(href='#') Partners
+              li
+                a(href='#') Updates
+          .mdl-mega-footer__drop-down-section
+            input.mdl-mega-footer__heading-checkbox(type='checkbox', checked='')
+            h1.mdl-mega-footer__heading Details
+            ul.mdl-mega-footer__link-list
+              li
+                a(href='#') Specs
+              li
+                a(href='#') Tools
+              li
+                a(href='#') Resources
+          .mdl-mega-footer__drop-down-section
+            input.mdl-mega-footer__heading-checkbox(type='checkbox', checked='')
+            h1.mdl-mega-footer__heading Technology
+            ul.mdl-mega-footer__link-list
+              li
+                a(href='#') How it works
+              li
+                a(href='#') Patterns
+              li
+                a(href='#') Usage
+              li
+                a(href='#') Products
+              li
+                a(href='#') Contracts
+          .mdl-mega-footer__drop-down-section
+            input.mdl-mega-footer__heading-checkbox(type='checkbox', checked='')
+            h1.mdl-mega-footer__heading FAQ
+            ul.mdl-mega-footer__link-list
+              li
+                a(href='#') Questions
+              li
+                a(href='#') Answers
+              li
+                a(href='#') Contact us
+        .mdl-mega-footer__bottom-section
+          .mdl-logo Title
+          ul.mdl-mega-footer__link-list
+            li
+              a(href='#') Help
+            li
+              a(href='#') Privacy & Terms

@@ -3,39 +3,75 @@ html
   head
     meta(charset='UTF-8')
     title Canvas! :D
+
+    //- //Jquery
+    script(type='text/javascript', src='https://code.jquery.com/jquery-2.1.1.min.js')
+
+    
+    //- // Materialize
+    //- link(rel='stylesheet', href='https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/css/materialize.min.css')
+    //- script(src='https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/js/materialize.min.js')
+    
+
+    //Material Design Lite
+    link(rel='stylesheet', href='https://fonts.googleapis.com/icon?family=Material+Icons')
+    link(rel='stylesheet', href='https://code.getmdl.io/1.1.3/material.cyan-teal.min.css')
+    script(defer='', src='https://code.getmdl.io/1.1.3/material.min.js')
+
     link(href='https://fonts.googleapis.com/css?family=Open+Sans', rel='stylesheet', type='text/css')
     link(rel='stylesheet', type='text/css', href='/stylesheets/stylePaintEditor.css')
     script(type='text/javascript', src='https://code.jquery.com/jquery-1.7.1.min.js')
     script(src='https://code.createjs.com/easeljs-0.8.2.min.js')
   body
+
     canvas#myCanvas(width='800', height='500', style='border:1px solid #000; border-radius:10px;')
-    h3 All the colors you really need:
-    select#Colors(onchange='getChoice(this.id);')
-      option(value='Green', selected='')  Green 
-      option(value='Purple')  Purple 
-      option(value='White')  White 
-      option(value='Red')  Red 
-      option(value='Orange')  Orange 
-      option(value='Blue')  Blue 
-    h3 Shapes! ( 3D have sold out :P ) 
-    select#Shapes(onchange='getChoice(this.id);')
-      option(value='Rectangle', selected='')  Rectangle 
-      option(value='Circle')  Circle
-      option(value='Line')  Line 
-    input#shapeDrawFillTool(type='button', value='Shape Draw Fill')
-    input#shapeDrawOutlineTool(type='button', value='Shape Draw Outline')
-    input#cursorTool(type='button', value='Cursor')
-    input#drawTool(type='button', value='Draw')
-    input#textTool(type='button', value='Text')
-    input#imageTool(type='button', value='Image')
-    br
-    br
-    h3 Free(dom) Form:
-    .onoffswitch
-      input#myonoffswitch.onoffswitch-checkbox(type='checkbox', name='onoffswitch', onchange='toggleDraw();')
-      label.onoffswitch-label(for='myonoffswitch')
-        span.onoffswitch-inner
-        span.onoffswitch-switch
+    .mdl-grid
+      .mdl-cell.mdl-cell--6-col
+        //- select#Colors(onchange='getChoice(this.id);')
+        //-   option(value='Green', selected='')  Green 
+        //-   option(value='Purple')  Purple 
+        //-   option(value='White')  White 
+        //-   option(value='Red')  Red 
+        //-   option(value='Orange')  Orange 
+        //-   option(value='Blue')  Blue 
+
+      //- .mdl-cell.mdl-cell--6-col      
+      //-   select#Shapes(onchange='getChoice(this.id);')
+      //-     option(value='Rectangle', selected='')  Rectangle 
+      //-     option(value='Circle')  Circle
+      //-     option(value='Line')  Line 
+
+    .mdl-grid
+      .mdl-cell.mdl-cell--2-col          
+        button#shapeDrawFillTool.mdl-button.mdl-js-button.mdl-button--raised.mdl-js-ripple-effect.mdl-button--colored Shape Draw Fill
+      .mdl-cell.mdl-cell--2-col          
+        button#shapeDrawOutlineTool.mdl-button.mdl-js-button.mdl-button--raised.mdl-js-ripple-effect.mdl-button--colored Shape Draw Outline
+      .mdl-cell.mdl-cell--2-col          
+        button#cursorTool.mdl-button.mdl-js-button.mdl-button--raised.mdl-js-ripple-effect.mdl-button--colored Cursor
+      .mdl-cell.mdl-cell--2-col          
+        button#drawTool.mdl-button.mdl-js-button.mdl-button--raised.mdl-js-ripple-effect.mdl-button--colored Draw
+      .mdl-cell.mdl-cell--2-col          
+        button#textTool.mdl-button.mdl-js-button.mdl-button--raised.mdl-js-ripple-effect.mdl-button--colored Text
+      .mdl-cell.mdl-cell--2-col          
+        button#imageTool.mdl-button.mdl-js-button.mdl-button--raised.mdl-js-ripple-effect.mdl-button--colored Image
+    .mdl-grid
+      button#ColorsButton.mdl-button.mdl-js-button.mdl-button--icon
+        i.material-icons color_lens
+      #Colors.mdl-menu.mdl-js-menu(for='ColorsButton',onchange='getChoice(this.id);')
+        option.mdl-menu__item.mdl-color--teal-300(value='Green', onclick="updateChoice('Colors',this.value)") 
+        option.mdl-menu__item.mdl-color--deep-purple-300(value='Purple', onclick="updateChoice('Colors',this.value)") 
+        option.mdl-menu__item.mdl-color--white(value='White', onclick="updateChoice('Colors',this.value)") 
+        option.mdl-menu__item.mdl-color--red-300(value='Red', onclick="updateChoice('Colors',this.value)") 
+        option.mdl-menu__item.mdl-color--deep-orange-300(value='Orange', onclick="updateChoice('Colors',this.value)") 
+        option.mdl-menu__item.mdl-color--cyan-300(value='Blue', onclick="updateChoice('Colors',this.value)")  
+
+      button#ShapesButton.mdl-button.mdl-js-button.mdl-button--icon
+        i.material-icons fiber_manual_record
+      #Shapes.mdl-menu.mdl-js-menu(for='ShapesButton',onchange='getChoice(this.id);')
+        option.mdl-menu__item.material-icons(value='Rectangle', onclick="updateChoice('Shapes',this.value)") stop
+        option.mdl-menu__item.material-icons(value='Circle', onclick="updateChoice('Shapes',this.value)") fiber_manual_record
+        option.mdl-menu__item.material-icons(value='Line', onclick="updateChoice('Shapes',this.value)") remove
+
     canvas#feed
     canvas#display
   script(src='/javascripts/easel.js')

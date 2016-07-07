@@ -2,6 +2,10 @@
 var canvas = document.getElementById("myCanvas");
 var ctx = canvas.getContext("2d");
 
+//initialize default choices for dropdowns
+var colorChoice="Green";
+var shapeChoice="Rectangle";
+
 //Color conversion to HEX
 var colors = {"Blue":"#1976D2","Purple":"#673AB7","Green":"#009688","Red":"#D32F2F","Orange":"#FF5722","Black":"#000000","White":"#ffffff"}
 
@@ -73,10 +77,28 @@ function magnitude(v1){
 	return Math.sqrt(result);
 }
 
-//Returns selected choice from dropdown lists with topic="Colors","Shapes"
+//UPDATED FOR MDL Material Design Dropdown
 function getChoice(topic){
-	return document.getElementById(topic)[document.getElementById(topic).selectedIndex].value;
+  console.log("topic",topic);
+  if(topic == "Colors"){
+    return colorChoice;
+  }
+  else if(topic == "Shapes"){
+    return shapeChoice;
+  }
+	//Original (Pre MDL) Code:
+  // return document.getElementById(topic)[document.getElementById(topic).selectedIndex].value;
 }
+//Created for MDL Material Design Dropdown
+function updateChoice(topic,choice){
+  if(topic == "Colors"){
+    colorChoice = choice;
+  }  
+  else if(topic == "Shapes"){
+    shapeChoice = choice;
+  }
+}
+
 
 //MAIN: Create instance of Easel()
 var myEasel = new Easel();

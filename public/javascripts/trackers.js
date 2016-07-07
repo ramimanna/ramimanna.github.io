@@ -178,24 +178,57 @@ function draw(v,ctx,b_ctx, w,h) {
       } 
     }
     ctx.putImageData(image_data,0,0,0,0,w,h);
-    setTimeout(draw,20,v,ctx,b_ctx,w,h);
+    setTimeout(draw,60,v,ctx,b_ctx,w,h);
 }
 
   // var tacking_canvas = new Canvas();
   
-  //---------------------------------------------------------------------//      
+if(filter == "experiment"){
 
-  // var colors = new tracking.ColorTracker(['magenta', 'cyan', 'yellow']);
+var MyTracker = function() {
+  MyTracker(this, 'constructor');
+}
+tracking.inherits(MyTracker, tracking.Tracker);
 
-  // colors.on('track', function(event) {
-  //   if (event.data.length === 0) {
-  //     // No colors were detected in this frame.
-  //   } else {
-  //     event.data.forEach(function(rect) {
-  //       console.log(rect.x, rect.y, rect.height, rect.width, rect.color);
-  //     });
-  //   }
-  // });
+MyTracker.prototype.track = function(pixels, width, height) {
+  // Your code here
+
+  this.emit('track', {
+    // Your results here
+  });
+}
+
+var myTracker = new tracking.MyTracker();
+
+myTracker.on('track', function(event) {
+  // Results are inside the event
+});
+tracking.track('#myVideo', myTracker);
+
+
+
+}
+
+
+if (filter == "colordetect"){
+  var colors = new tracking.ColorTracker(['magenta', 'cyan', 'yellow']);
+
+  colors.on('track', function(event) {
+    if (event.data.length === 0) {
+      // No colors were detected in this frame.
+    } else {
+      event.data.forEach(function(rect) {
+          front_ctx.clearRect(0,0,front.width,front.height);
+          front_ctx.beginPath();
+          front_ctx.strokeStyle=rect.color;
+          console.log("rect",rect);
+          front_ctx.strokeRect(rect.x,rect.y,rect.width,rect.height);
+          front_ctx.stroke();        
+      });
+    }
+  });
+  tracking.track('#myVideo', colors);    
+}
   if(filter == "facedetect"){
     front_ctx.lineWidth="1";
     front_ctx.strokeStyle="purple";
