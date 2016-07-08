@@ -11,15 +11,16 @@ textarea,#textInput {
     max-height:200px;
 }
 
-.material-icons{
-    font-size: 28px;
+i.material-icons{
+    font-size: 56px;
+    margin-left: -16px;
     font-color:blue !important;
 }
 
-/*button,select,option{
-    -webkit-appearance:none;    
+option.material-icons{
+    text-align: center;
+    font-size: 36px;
 }
-*/
 
 #CanvasCard{ /*#feed,#display*/
     display:block;
@@ -27,14 +28,6 @@ textarea,#textInput {
     width:1000px;
 }
 
-/*#feed{
-    position:relative;
-    top:-500px;
-}
-#display: {
-    position:relative;
-    bottom:0;
-}*/
 .mdl-card__media{
 
     height:500px;
@@ -48,4 +41,9 @@ textarea,#textInput {
 }
 body{
     background: #eee;
+}
+
+#ColorsButton, #ShapesButton{
+    width:70px;
+    height:70px;
 }

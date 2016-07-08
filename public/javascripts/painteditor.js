@@ -104,6 +104,8 @@ function updateChoice(topic,choice){
 var myEasel = new Easel();
 //Initialize current_tool
 var current_tool = "cursor";
+
+//Create Event Listeners
 canvas.addEventListener("mousedown",myEasel.mouseDown.bind(myEasel));
 canvas.addEventListener("mouseup",myEasel.mouseUp.bind(myEasel));
 canvas.addEventListener("mousemove",myEasel.mouseMove.bind(myEasel));
