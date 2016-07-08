@@ -2,12 +2,13 @@
 var canvas = document.getElementById("myCanvas");
 var ctx = canvas.getContext("2d");
 
-//initialize default choices for dropdowns
-var colorChoice="Green";
-var shapeChoice="Rectangle";
 
 //Color conversion to HEX
-var colors = {"Blue":"#1976D2","Purple":"#673AB7","Green":"#009688","Red":"#D32F2F","Orange":"#FF5722","Black":"#000000","White":"#ffffff"}
+var colors = {"Blue":"#4FC3F7","Purple":"#9575CD","Green":"#81C784","Red":"#E57373","Orange":"#FF8A65","Black":"#000000","White":"#ffffff"}
+
+//initialize default choices for dropdowns
+var colorChoice=colors["Green"];
+var shapeChoice="Rectangle";
 
 //Keeps track of input in text box
 var text_value = "";
@@ -92,10 +93,10 @@ function getChoice(topic){
 //Created for MDL Material Design Dropdown
 function updateChoice(topic,choice){
   if(topic == "Colors"){
-    colorChoice = choice;
+    colorChoice = colors[choice];
   }  
   else if(topic == "Shapes"){
-    shapeChoice = choice;
+    shapeChoice = colors[choice];
   }
 }
 
@@ -112,9 +113,7 @@ canvas.addEventListener("mousemove",myEasel.mouseMove.bind(myEasel));
 canvas.addEventListener("dblclick",myEasel.doubleClick.bind(myEasel));
 document.addEventListener("keydown",myEasel.keyDownOrPress.bind(myEasel));
 
-//Canvas Offsets from top left of body, used for mouse tracking adjustment
-left_offset = $('canvas').offset().left;
-top_offset = $('canvas').offset().top; 
+
 
 //mouse coords at any time
 var mouse=[0,0];
@@ -122,6 +121,9 @@ var mouse=[0,0];
 var shiftDown = false;
 //Keeps track of these mouse (mouse position) and shiftDown (if shift key is down) with a listener when the mouse moves
 document.addEventListener('mousemove', function(e) { 
+  //Canvas Offsets from top left of body, used for mouse tracking adjustment
+  left_offset = $('canvas').offset().left;
+  top_offset = $('canvas').offset().top;   
   mouse = [e.pageX - left_offset, e.pageY - top_offset];
   shiftDown = false;
   if(event.shiftKey){

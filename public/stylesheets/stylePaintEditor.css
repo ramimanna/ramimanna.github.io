@@ -17,7 +17,7 @@ i.material-icons{
     font-color:blue !important;
 }
 
-option.material-icons{
+option.material-icons,#ToolButtons i.materialicons{
     text-align: center;
     font-size: 36px;
 }
@@ -36,7 +36,8 @@ option.material-icons{
 
 #ToolButtons button{
     width:150px;
-    display:block;
+/*    height:56px;
+*/    display:block;
     margin: 0 auto;
 }
 body{

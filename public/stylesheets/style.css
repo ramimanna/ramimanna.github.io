@@ -107,7 +107,7 @@ body{
   position:absolute;
   top:0; /*64 for header, x2 to make bottom space the same height*/
 
-  background-image: linear-gradient(rgba(63, 81, 181, 0.75), rgba(63, 81, 181, 0.75)), url(/images/canal_grande_venice.jpg);/* */
+  background-image: linear-gradient(rgba(63, 81, 181, 0.6), rgba(63, 81, 181, 0.6)), url(/images/sunset.jpg);/* */
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -125,7 +125,7 @@ margin-top:56px;
 
 #hero-title{
 	font-family: "LATO";
-  font-size: 78px;
+  font-size: 80px;
   font-weight: 100;
 }
 
