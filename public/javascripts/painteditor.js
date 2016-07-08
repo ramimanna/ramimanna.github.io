@@ -85,6 +85,7 @@ function getChoice(topic){
     return colorChoice;
   }
   else if(topic == "Shapes"){
+    console.log(topic, " choice is ", shapeChoice);
     return shapeChoice;
   }
 	//Original (Pre MDL) Code:
@@ -96,7 +97,7 @@ function updateChoice(topic,choice){
     colorChoice = colors[choice];
   }  
   else if(topic == "Shapes"){
-    shapeChoice = colors[choice];
+    shapeChoice = choice;
   }
 }
 
