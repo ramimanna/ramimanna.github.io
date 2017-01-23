@@ -34,3 +34,33 @@ body{
     -webkit-transform:rotateY(180deg); /* Safari and Chrome */
     -moz-transform:rotateY(180deg); /* Firefox */
 }
+
+#ModeButtons a{
+    text-decoration: none;
+}
+
+#ModeButtons > button{
+    width:150px;
+/*    height:56px;
+*/    display:block;
+    margin: 0 auto;
+}
+body{
+    background: #eee;
+}
+
+i.material-icons{
+    font-size: 56px;
+    margin-left: -16px;
+    font-color:blue !important;
+}
+
+option.material-icons,#ToolButtons i.materialicons{
+    text-align: center;
+    font-size: 36px;
+}
+
+#ColorsButton{
+    width:70px;
+    height:70px;
+}
