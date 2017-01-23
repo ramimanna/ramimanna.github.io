@@ -32,34 +32,34 @@ html
           script(src='/javascripts/trackers.js', type='text/javascript')
       #ModeButtons.mdl-grid
         .mdl-cell.mdl-cell--2-col          
-          a(href='./scharr') 
+          a(href='tracking/scharr') 
             button.mdl-button.mdl-js-button.mdl-button--raised.mdl-js-ripple-effect.mdl-button--colored Scharr Filter
         .mdl-cell.mdl-cell--2-col          
-          a(href='./sobel') 
+          a(href='tracking/sobel') 
             button.mdl-button.mdl-js-button.mdl-button--raised.mdl-js-ripple-effect.mdl-button--colored Sobel Filter
         .mdl-cell.mdl-cell--2-col          
-          a(href='./opticalflow') 
+          a(href='tracking/opticalflow') 
             button.mdl-button.mdl-js-button.mdl-button--raised.mdl-js-ripple-effect.mdl-button--colored Optical Flow
         .mdl-cell.mdl-cell--2-col          
-          a(href='./facedetect') 
+          a(href='tracking/facedetect') 
             button.mdl-button.mdl-js-button.mdl-button--raised.mdl-js-ripple-effect.mdl-button--colored Face Detect
         .mdl-cell.mdl-cell--2-col          
-          a(href='./colordetect') 
+          a(href='tracking/colordetect') 
             button.mdl-button.mdl-js-button.mdl-button--raised.mdl-js-ripple-effect.mdl-button--colored Color Detect
       .mdl-grid
         .mdl-cell.mdl-cell--2col        
           button#ColorsButton.mdl-button.mdl-js-button.mdl-button--icon
             i.material-icons color_lens
           #Colors.mdl-menu.mdl-js-menu(for='ColorsButton',onchange='getChoice(this.id);')
-            a(href="./green")
+            a(href="tracking/green")
               option.mdl-menu__item.mdl-color--green-300
-            a(href="./purple")
+            a(href="tracking/purple")
               option.mdl-menu__item.mdl-color--deep-purple-300
-            a(href="./yellow")
+            a(href="tracking/yellow")
               option.mdl-menu__item.mdl-color--yellow-300
-            a(href="./red")          
+            a(href="tracking/red")          
               option.mdl-menu__item.mdl-color--red-300
-            a(href="./cyan")
+            a(href="tracking/cyan")
               option.mdl-menu__item.mdl-color--cyan-300
-            a(href="./blue")
+            a(href="tracking/blue")
               option.mdl-menu__item.mdl-color--indigo-300
